@@ -1,10 +1,14 @@
 {
   "name": "webpack-express",
   "version": "1.0.0",
-  "description": "Express Node start up.",
-  "main": "server.js",
+  "description": "A simple boilerplate for Web Apps using Express and webpack.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aniketdatta47/express-starter-kit.git"
+  },
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "webpack": "^1.14.0"
   },
   "devDependencies": {},
   "scripts": {

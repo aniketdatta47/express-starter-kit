@@ -1,12 +1,11 @@
 var webpack = require('webpack');
-var path = require('path');
-require('dotenv').config();
+var path    = require('path');
 
 var APP_DIR   = path.resolve(__dirname, 'src/client/app');
 var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 
 var config = {
-	entry: APP_DIR + '/init.jsx',
+	entry: APP_DIR + '/js/main.js',
 	output: {
 		path: BUILD_DIR,
 		filename: 'bundle.js'
@@ -20,9 +19,9 @@ var config = {
 	],
 	module: {
 		loaders: [{
-			test: /\.jsx?/,
+			test: /\.css?/,
 			include: APP_DIR,
-			loader: 'babel'
+			loader: 'style!css'
 		}]
 	}
 };
