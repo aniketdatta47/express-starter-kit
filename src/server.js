@@ -5,14 +5,14 @@ var http  = require('http');
 var server = http.createServer(app);
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/public/views/index.html')
+  res.sendFile(__dirname + '/client/public/views/index.html')
 });
 
 app.post('/test', function (req, res) {
   res.send({'test': 'foo'});
 });
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/client/public'));
 
 server.listen(PORT, 'localhost');
 server.on('listening', function () {
