@@ -1,8 +1,9 @@
 var webpack = require('webpack');
 var path    = require('path');
+var LiveReloadPlugin = require('webpack-livereload-plugin');
 
-var APP_DIR   = path.resolve(__dirname, 'src/client/app');
-var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
+var APP_DIR   = path.resolve(__dirname, 'src/client/public');
+var BUILD_DIR = path.resolve(__dirname, 'src/client/prod');
 
 var config = {
 	entry: APP_DIR + '/js/main.js',
@@ -15,7 +16,8 @@ var config = {
 		  'process.env': {
 		    'FLICKRAPIKEY': JSON.stringify(process.env.FLICKRAPIKEY)
 		  }
-		})
+		}),
+		new LiveReloadPlugin()
 	],
 	module: {
 		loaders: [{
